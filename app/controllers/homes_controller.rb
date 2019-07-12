@@ -36,8 +36,10 @@ class HomesController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy
+    post = Post.find(params[:id])
+    post.destroy
     
     redirect_to '/'
   end
+  
 end
