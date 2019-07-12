@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  
   def index
     @posts = Post.all
   end
@@ -18,15 +20,15 @@ class HomesController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post.name = params[:post][:name]
     @post.title = params[:post][:title]
     @post.content = params[:post][:content]
@@ -36,10 +38,15 @@ class HomesController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post.destroy
     
     redirect_to '/'
   end
+  
+  private
+    def set_post
+      @post = Post.find(params[:id])
+    end
   
 end
