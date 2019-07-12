@@ -1,0 +1,13 @@
+<h1>Homes#show</h1>
+<p>Find me in app/views/homes/show.html.erb</p>
+
+<hr>
+작성자: <%= @post.name %> <br>
+제목: <%= @post.title %> <br>
+내용: <%= @post.content %> <br>
+
+<%= link_to "되돌아가기", homes_path %>
+<%= link_to "수정하기", edit_home_path(id: @post.id) %>
+<%= link_to "삭제하기", home_path(id: @post.id), method: :DELETE %>
+
+<hr>

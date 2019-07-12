@@ -1,0 +1,10 @@
+<h1>Homes#new</h1>
+<p>Find me in app/views/homes/new.html.erb</p>
+
+<%= form_for @post, url: homes_path, method: "POST" do |f| %>
+    작성자: <p> <%= f.text_field :name %> </p>
+    제목: <p> <%= f.text_field :title %> </p>
+    내용: <p> <%= f.text_area :content, size: '50x10' %> </p>
+    <%= f.submit "작성" %>
+<% end %>
+<!--</form>-->

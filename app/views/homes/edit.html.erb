@@ -1,0 +1,10 @@
+<h1>Homes#edit</h1>
+<p>Find me in app/views/homes/edit.html.erb</p>
+
+<%= form_for @post, url: home_path, method: "PATCH" do |f| %>
+    새 작성자: <%= f.text_field :name %> <br>
+    새 제목: <%= f.text_field :title %> <br>
+    새 내용: <%= f.text_area :content %> <br>
+
+    <%= f.submit "수정완료" %>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Homes#index</h1>
+<p>Find me in app/views/homes/index.html.erb</p>
+
+<% @posts.each do |p| %>
+    작성자: <%= p.name %> 
+    제목: <%= p.title %> 
+    내용: <%= p.content %> 
+    <%= link_to "더 보기", home_path(id: p.id) %>
+    <%= link_to "수정하기", edit_home_path(id: p.id) %>
+    <%= link_to "삭제하기", home_path(id: p.id), method: "DELETE"%> <br>
+    <hr>
+<% end %>
+
+<%= link_to "새 글 작성",  new_home_path %>
